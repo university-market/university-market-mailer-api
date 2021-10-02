@@ -63,7 +63,7 @@ node server.js
 
 Este serviço é desenvolvido sobre as seguintes tecnologias:
 
-![nodejs](assets/technologies/logo-nodejs.png)
+![nodejs](assets/technologies/nodejs.jpg)
 
 - [x] NodeJS
 - [x] Express - Framework para NodeJS
