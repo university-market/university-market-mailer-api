@@ -1,0 +1,20 @@
+{
+  "name": "university-market-mailer-api",
+  "version": "1.0.0",
+  "description": "Projeto de **serviço de e-mail** utilizado pela API da plataforma University Market.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/university-market/university-market-mailer-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/university-market/university-market-mailer-api/issues"
+  },
+  "homepage": "https://github.com/university-market/university-market-mailer-api#readme"
+}
