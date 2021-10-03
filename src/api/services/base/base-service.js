@@ -15,7 +15,7 @@ class BaseService {
         // Envio de email deve ser aqui
         console.log(data);
 
-        // mail.send(data);
+        mail.send(data);
     }
 };
 
