@@ -1,0 +1,131 @@
+<html>
+<head>
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap'); */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body * {
+            box-sizing: border-box;
+        }
+        .text-accent {
+            color: #4400e2;
+        }
+        .bg-accent {
+            background-color: #4400e2;
+            color: #fff;
+        }
+        article {
+            width: 100%;
+            display: block;
+        }
+        header {
+            display: block;
+            padding: 15px;
+        }
+        .linear-bg {
+            background-image: linear-gradient(to right, #4400e2, rgb(0, 0, 0, 0));
+            color: #fff;
+        }
+        #img > img {
+            width: 50px;
+        }
+        section {
+            padding: 15px;
+        }
+        .aviso {
+            border-left: solid 3px rgb(68, 0, 226, 1);
+            padding: 5px 0 5px 7.5px;
+        }
+        .first-alert {
+            background: rgb(68, 0, 226, 0.15);
+            border: solid 1px rgb(68, 0, 226, 1);
+            border-radius: 10px;
+            padding: 15px;
+            line-height: 27.5px;
+        }
+        #nome {
+            font-weight: bold;
+        }
+        footer {
+            padding: 25px;
+            text-align: center;
+            font-size: 1.05em;
+        }
+        .divider {
+            margin: 25px 0;
+            border-color: #4400e2;
+        }
+        .gestor, .equipe {
+            font-weight: bold;
+            font-size: 1.15em;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <header class="linear-bg">
+            <h3>
+                Olá <span id="nome">{{nome}}</span>, {{cumprimento}}!
+            </h3>
+            <small>
+                Seja bem-vindo à plataforma <i>{{appName}}</i>.
+            </small>
+        </header>
+        <section>
+            <p class="aviso linear-bg">
+                Se você consegue ler este e-mail é sinal de que o micro-serviço de e-mail da {{appName}} está funcionando.
+            </p>
+            <p>
+                Este é apenas um e-mail de exemplo, criado para fins de teste, para que um template de exemplo possa ser enviado para contatos do sistema.
+            </p>
+            <div class="first-alert">
+                <h3 class="text-accent">
+                    Importante!
+                </h3>
+                <hr class="divider">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae illo, doloremque hic non, ipsum fugiat tempora eius assumenda asperiores consectetur dolorum id ad iste molestias odio porro, vero nesciunt. Sapiente.
+            </div>
+            <p>
+                <ul>
+                    <li>
+                        Apenas fins de confirmação, acreditamos estar falando com {{nome}}.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                E, também, acreditamos que este seja o seu e-mail:
+                <ul>
+                    <li>
+                        <a href="mailto:{{email}}" title="{{email}}">
+                            {{email}}
+                        </a>;
+                    </li>
+                    <li>
+                        <b>Obs.:</b>
+                        O e-mail contém um hyperlink com <u>mailto</u>, para testar envio direto através do smartphone.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Assim, finalizamos o contato. <strong>Obrigado pela atenção.</strong>
+            </p>
+            <hr class="divider">
+            <aside>
+                <p>
+                    Atenciosamente,
+                </p>
+                <p>
+                    <span class="gestor text-accent">Felipe, </span>
+                    gestor da {{appName}} - para a 
+                    <span class="equipe text-accent">Equipe {{appName}}!</span>
+                </p>
+            </aside>
+        </section>
+        <footer class="bg-accent">
+            {{appName}} - {{currentYear}} &copy; Todos os direitos reservados.
+        </footer>
+    </article>
+</body>
+</html>
