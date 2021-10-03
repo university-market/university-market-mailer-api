@@ -1,9 +1,9 @@
 "use strict";
 const environment = require("../config/environment");
-const environment_email = require("../config/email_environment");
+const environment_email = require("../config/environment.email");
 const nodemailer = require("nodemailer");
 const handlebars = require("handlebars");
-const reader = require("./private/template-reader");
+const reader = require("./private/template-reader-helper");
 const validator = require("./private/email-config-validator-helper");
 
 const transporterConfig = {
@@ -27,7 +27,7 @@ const mail = {
   send(data) {
 
     // Validação das configurações definidas antes do envio do email
-    validator(this.contact, this.config);
+    validator(this.contact, this.config, environment.templatesDirectory);
 
     const account = environment_email.account;
 
@@ -40,12 +40,12 @@ const mail = {
       },
     });
 
-    const template_path = environment.templatesDirectory 
+    const template_path = environment.templatesDirectory + '/'
         + this.config.template.folder + '/'
         + this.config.template.template;
 
     // send mail with defined transport object
-    reader(template_path + this.config.template, (error, html) => {
+    reader.readTemplate(template_path + this.config.template, (error, html) => {
 
       const template = handlebars.compile(html);
       const replacements = {
