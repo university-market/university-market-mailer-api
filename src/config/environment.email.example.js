@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 
     host: 'your_host',
     port: 999,
