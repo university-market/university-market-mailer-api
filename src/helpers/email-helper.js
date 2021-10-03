@@ -45,7 +45,7 @@ const mail = {
         + this.config.template.template;
 
     // send mail with defined transport object
-    reader.readTemplate(template_path + this.config.template, (error, html) => {
+    reader.readTemplate(template_path, (error, html) => {
 
       const template = handlebars.compile(html);
       const replacements = {
