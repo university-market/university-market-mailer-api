@@ -1,4 +1,6 @@
 module.exports = {
 
-    appName: 'University Market'
+    port: 3000,
+    appName: 'University Market',
+    templatesDirectory: 'templates'
 };
