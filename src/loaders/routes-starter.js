@@ -4,6 +4,6 @@ module.exports = {
 
     startRoutesInstance(app) {
 
-        routes.forEach(route => route?.init(app) ?? null);
+        routes.forEach(route => route(app) ?? null);
     }
 };
