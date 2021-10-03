@@ -1,5 +1,8 @@
-export default class EmailTemplate {
+module.exports = class EmailTemplate {
 
     // Grupo de templates de exemplo
-    static example = '/example/example-template.html'
+    static example = {
+        folder: 'example',
+        template: 'example-template.html'
+    }
 }
