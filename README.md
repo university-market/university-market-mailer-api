@@ -48,13 +48,9 @@ Caso seu sistema operacional seja Windows, talvez alguns recursos adicionais sej
 ```bash
 npm install
 ```
-:two: Acesse o diretório onde está o entry point do servidor
+:two: Inicie a execução local do projeto
 ```bash
-cd ./src
-```
-:three: Execute o projeto (porta default: `3000`)
-```bash
-node server.js
+sh ./init.sh
 ```
 
 <div id='technologies'/> &nbsp;
