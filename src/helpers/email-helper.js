@@ -44,6 +44,8 @@ const mail = {
         + this.config.template.folder + '/'
         + this.config.template.template;
 
+    console.info('Template encontrado:', template_path);
+
     // send mail with defined transport object
     reader.readTemplate(template_path, (error, html) => {
 
@@ -59,6 +61,11 @@ const mail = {
         subject: this.config.subject,
         html: htmlToSend
       };
+
+      console.info('Enviando e-mail...');
+
+      console.info('Destinatário:', mailOptions.to);
+      console.info('Assunto:', mailOptions.subject);
 
       // Send mail
       transporter.sendMail(mailOptions, function (error, response) {
