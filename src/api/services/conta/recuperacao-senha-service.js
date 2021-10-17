@@ -21,7 +21,7 @@ class RecuperacaoSenhaService extends UniversityMarketBase {
             nome: data?.estudanteNome,
             token: data?.token,
             tempoExpiracao: `${data?.expirationTime} ${labelTempoExpiracao}`,
-            baseUrl: super.getApplicationUrl(),
+            baseUrl: this.getApplicationUrl(),
             dataHoraSolicitacao: strTempoExpiracao
         };
 
@@ -37,7 +37,7 @@ class RecuperacaoSenhaService extends UniversityMarketBase {
 
         const datePart = [datetime.getDate(), datetime.getMonth()+1]
             .map(this.formatPadLeft);
-        const timePart = [datetime.getHours(), datetime.getMinutes(), datetime.getSeconds()]
+        const timePart = [datetime.getHours(), datetime.getMinutes()]
             .map(this.formatPadLeft);
 
         // Adicionar ano (único campo não formatado com zero a esquerda)
