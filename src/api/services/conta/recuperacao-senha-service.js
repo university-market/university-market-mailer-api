@@ -1,7 +1,8 @@
+const UniversityMarketBase = require('../../base/university-market-base');
 const mail = require('../../../helpers/email-helper');
 const template = require('../../../common/email-template');
 
-class BaseService {
+class RecuperacaoSenhaService extends UniversityMarketBase {
 
     async sendEmailRecuperacaoSenha(data) {
 
@@ -20,6 +21,7 @@ class BaseService {
             nome: data?.estudanteNome,
             token: data?.token,
             tempoExpiracao: `${data?.expirationTime} ${labelTempoExpiracao}`,
+            baseUrl: super.getApplicationUrl(),
             dataHoraSolicitacao: strTempoExpiracao
         };
 
@@ -49,4 +51,4 @@ class BaseService {
     }
 };
 
-module.exports = new BaseService();
+module.exports = new RecuperacaoSenhaService();
