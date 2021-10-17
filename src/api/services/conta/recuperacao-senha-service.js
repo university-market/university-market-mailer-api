@@ -18,7 +18,6 @@ class BaseService {
 
         const templateData = {
             nome: data?.estudanteNome,
-            email: data?.email,
             token: data?.token,
             tempoExpiracao: `${data?.expirationTime} ${labelTempoExpiracao}`,
             dataHoraSolicitacao: strTempoExpiracao
