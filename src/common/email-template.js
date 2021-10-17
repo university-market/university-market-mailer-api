@@ -5,4 +5,9 @@ module.exports = class EmailTemplate {
         folder: 'example',
         template: 'example-template.html'
     }
+
+    static recuperacaoSenha = {
+        folder: 'conta/recuperacao',
+        template: 'recuperar-senha.html'
+    }
 }
