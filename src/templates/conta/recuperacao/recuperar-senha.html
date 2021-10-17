@@ -6,11 +6,182 @@
     <title>Recuperação de senha</title>
     <style>
 
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        body * { box-sizing: border-box; }
+
+        main {
+            display: block;
+            background: rgba(68, 0, 226, 0.15);
+            padding: 10px 0;
+        }
+        article.box {
+            width: 750px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        article.box > header {
+            background: #4400e2;
+            color: #fff;
+            padding: 15px 12.5px;
+            /* font-size: 1.25em; */
+        }
+        article.box > section {
+            padding: 7.5px 12.5px;
+            background: #fff;
+        }
+        article.box > footer {
+            padding: 7.5px 12.5px;
+            color: #000;
+            background: rgba(68, 0, 226, 0.25);
+        }
+        .line-30 {
+            line-height: 30px;
+        }
+        .line-15 {
+            line-height: 20px;
+        }
+        .done {
+            display: block;
+            text-align: center;
+        }
+
+        .action {
+            display: block;
+            text-align: center;
+        }
+
+        #btn-action {
+
+            display: inline-block;
+            width: 250px;
+            padding: 25px 0 15px 0;
+            background: #4400e2;
+            color: #fff;
+            font-size: 1.2em;
+            border-bottom: solid 10px #7034fd;
+        }
+
+        .no-wrap {
+            white-space: nowrap;
+        }
+        .detalhe {
+            margin-top: 0px;
+        }
+        .thanks {
+            margin-top: 50px;
+        }
+
+        .badge-beta {
+            background: #4400e2;
+            color: #fff;
+            padding: 2.5px 5px;
+            border-radius: 7.5px;
+            font-size: 12px;
+            display: inline;
+        }
+        .text-accent {
+            color: #4400e2;
+        }
+        .horizontal-divider {
+            border: solid 1px #4400e2;
+            height: 2px;
+            margin: 5px 0;
+        }
+        a { text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
     
-    
+    <main>
+        <article class="box">
+            <header>
+                <h2>{{appName}}</h2>
+                
+                <small>Solicitação de redefinição de senha</small>
+            </header>
+            <section>
+                <h2>Olá, {{nome}}</h2>
+
+                <p class="line-30">
+                    Recebemos a sua solicitação de <span class="no-wrap">redefinição de senha.</span>
+                </p>
+
+                <div class="horizontal-divider"></div>
+
+                <div class="line-30">
+
+                    <p>
+                        Antes de prosseguir com o processo de redefinição de senha, <br> temos algumas orientações para lhe dar:
+                    </p>
+
+                    <ul>
+                        <li>
+                            A sua senha é <strong>pessoal</strong> e <strong>instransferível</strong>. Não passe para ninguém.
+                        </li>
+                        <li>
+                            Após a redefinição, a antiga senha será invalidada. Portanto, escolha bem.
+                        </li>
+                        <li>
+                            Você poderá acompanhar o histórico de redefinições de senha no seu 
+                            <span class="no-wrap">
+                                perfil. 
+                                <span class="badge-beta">Beta</span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="horizontal-divider"></div>
+
+                <p class="done line-30">
+                    Agora é só <a href="#{{token}}" class="text-accent">seguir o link</a> do botão abaixo e escolher sua nova senha!
+                </p>
+
+                <section class="action">
+                    <a href="#{{token}}">
+                        <div id="btn-action">
+                            Redefinir senha
+                        </div>
+                    </a>
+                </section>
+
+                <p class="done line-30">
+                    <strong>Mas atenção!</strong> Este link é válido por apenas 
+                    <strong class="no-wrap text-accent">{{tempoExpiracao}}</strong>,
+                    <br>
+                </p>
+
+                <small class="done line-30 detalhe">
+                    contados a partir de {{dataHoraSolicitacao}} (abertura da solicitação).
+                </small>
+
+                <p class="thanks">
+                    Atenciosamente, <strong class="text-accent">Equipe {{appName}}</strong>.
+                </p>
+
+            </section>
+            <footer>
+
+                <p>
+                    <small class="line-15">
+                        Não é {{nome}}? 
+                        Não solicitou redefinição de senha na plataforma {{appName}} nos últimos minutos? 
+                        <p>
+                            Então desculpe-nos pelo transtorno e desconsidere este <span class="no-wrap">e-mail.</span>
+                        </p>
+                    </small>
+                </p>
+
+            </footer>
+        </article>
+
+    </main>
 
 </body>
 </html>
