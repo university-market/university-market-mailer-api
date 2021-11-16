@@ -10,4 +10,9 @@ module.exports = class EmailTemplate {
         folder: 'conta/recuperacao',
         template: 'recuperar-senha.html'
     }
+
+    static createdContaInstitucional = {
+        folder: 'instituicao/conta',
+        template: 'criacao-conta-institucional.html'
+    }
 }
