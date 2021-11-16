@@ -8,13 +8,14 @@ class ContaInstitucionalService extends UniversityMarketBase {
 
         mail.config = {
             
-            template: template.recuperacaoSenha,
+            template: template.createdContaInstitucional,
             subject: 'Sua Conta Institucional'
         };
         mail.contact = data.email;
 
         const templateData = {
             razaoSocial: data?.razaoSocial,
+            senha: data?.senha,
             baseUrl: this.getApplicationUrl(),
         };
 
