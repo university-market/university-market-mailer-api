@@ -4,28 +4,26 @@ const template = require('../../../common/email-template');
 
 class RecuperacaoSenhaService extends UniversityMarketBase {
 
-    async sendEmailRecuperacaoSenha(data) {
+    async sendEmailRecuperacaoSenha(payload) {
 
+        mail.contact = payload.email;
         mail.config = {
-            
             template: template.recuperacaoSenha,
             subject: 'Recuperação de senha'
         };
-        mail.contact = data.email;
 
-        const labelTempoExpiracao = data?.expirationTime == 1 ? 'minuto' : 'minutos';
-
-        const strTempoExpiracao = this.criarDataFormatada(data?.requestDate);
+        const labelTempoExpiracao = payload?.expirationTime == 1 ? 'minuto' : 'minutos';
+        const strTempoExpiracao = this.criarDataFormatada(payload?.requestDate);
 
         const templateData = {
-            nome: data?.estudanteNome,
-            token: data?.token,
-            tempoExpiracao: `${data?.expirationTime} ${labelTempoExpiracao}`,
+            nome: payload?.estudanteNome,
+            token: payload?.token,
+            tempoExpiracao: `${payload?.expirationTime} ${labelTempoExpiracao}`,
             baseUrl: this.getApplicationUrl(),
             dataHoraSolicitacao: strTempoExpiracao
         };
 
-        mail.send(templateData);
+        await mail.send(templateData);
     }
 
     criarDataFormatada(unformatedDate) {
